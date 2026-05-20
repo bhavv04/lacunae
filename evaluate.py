@@ -5,8 +5,8 @@ import matplotlib.gridspec as gridspec
 from skimage.metrics import structural_similarity as ssim
 from skimage.metrics import peak_signal_noise_ratio as psnr
 from torch.utils.data import DataLoader
-from lacunae.dataset import SliceDataset
-from lacunae.model import UNet
+from dataset import SliceDataset
+from model import UNet
 from pathlib import Path
 
 

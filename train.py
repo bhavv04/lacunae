@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, random_split
-from lacunae.dataset import SliceDataset
-from lacunae.model import UNet
+from dataset import SliceDataset
+from model import UNet
 import matplotlib.pyplot as plt
 from pathlib import Path
 
