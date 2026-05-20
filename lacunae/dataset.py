@@ -1,11 +1,12 @@
 import h5py
+from matplotlib import image
 import numpy as np
 import torch
 from torch.utils.data import Dataset
 from pathlib import Path
 from lacunae.transforms import apply_mask, build_mask
 
-TARGET_SHAPE = (640, 372)
+TARGET_SHAPE = (640, 368)
 
 class SliceDataset(Dataset):
     def __init__(self, root_dir: str, acceleration: int = 4, center_fractions: float = 0.08):
@@ -27,14 +28,10 @@ class SliceDataset(Dataset):
         return len(self.slices)
 
     def _resize(self, image: np.ndarray) -> np.ndarray:
-        """Pad image to TARGET_SHAPE if smaller, crop if larger."""
         h, w = image.shape
         th, tw = TARGET_SHAPE
-        result = np.zeros(TARGET_SHAPE, dtype=np.float32)
-        h_end = min(h, th)
-        w_end = min(w, tw)
-        result[:h_end, :w_end] = image[:h_end, :w_end]
-        return result
+        return image[:min(h, th), :min(w, tw)]
+
 
     def __getitem__(self, idx):
         filepath, slice_idx = self.slices[idx]

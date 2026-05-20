@@ -8,8 +8,8 @@ from pathlib import Path
 
 
 def train(
-    data_dir: str = "data/singlecoil_test",
-    epochs: int = 10,
+    data_dir: str = "data/singlecoil_test", 
+    epochs: int = 30,   #changing this from 10 due to overfitting, also 10 barely procuded anything decent results
     batch_size: int = 4,
     lr: float = 1e-3,
     acceleration: int = 4,

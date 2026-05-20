@@ -1,5 +1,7 @@
 # Lacunae
 
+![sample](sample.png)
+
 Undersampled MRI reconstruction using a U-Net trained on k-space data from the [fastMRI dataset](https://fastmri.med.nyu.edu). The name comes from the Latin word for "gaps" - what undersampling literally creates in k-space.
 
 ## What it does
