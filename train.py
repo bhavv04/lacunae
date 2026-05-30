@@ -12,7 +12,7 @@ def train(
     epochs: int = 30,   #changing this from 10 due to overfitting, also 10 barely procuded anything decent results
     batch_size: int = 4,
     lr: float = 1e-3,
-    acceleration: int = 4,
+    acceleration: int = 8,
     save_dir: str = "results",
 ):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -72,7 +72,7 @@ def train(
 
         # save checkpoint every 5 epochs
         if (epoch + 1) % 5 == 0:
-            torch.save(model.state_dict(), f"{save_dir}/unet_epoch{epoch+1}.pt")
+            torch.save(model.state_dict(), f"{save_dir}/unet_8x_epoch{epoch+1}.pt")
 
     # plot loss curve
     plt.figure(figsize=(8, 4))
@@ -82,9 +82,9 @@ def train(
     plt.ylabel("L1 Loss")
     plt.title("Training curve")
     plt.legend()
-    plt.savefig(f"{save_dir}/loss_curve.png")
+    plt.savefig(f"{save_dir}/loss_curve_8x.png")
     plt.close()
-    print(f"Loss curve saved to {save_dir}/loss_curve.png")
+    print(f"Loss curve saved to {save_dir}/loss_curve_8x.png")
 
     return model
 

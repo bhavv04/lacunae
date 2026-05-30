@@ -12,11 +12,12 @@ from pathlib import Path
 
 def evaluate(
     data_dir: str = "data/singlecoil_test",
-    checkpoint: str = "results/unet_epoch30.pt",
+    checkpoint: str = "results/unet_8x_epoch30.pt",
     save_dir: str = "results",
     num_visuals: int = 5,
-    acceleration: int = 4,
+    acceleration: int = 8,
 ):
+    
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
