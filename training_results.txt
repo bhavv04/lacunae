@@ -1,4 +1,4 @@
-PS C:\Users\bhavd\Projects\lacunae> python train.py 
+python train.py 
 Using device: cuda
 Total slices: 3903
 Epoch 1/30 | train loss: 0.2543 | val loss: 0.2435
@@ -32,4 +32,3 @@ Epoch 28/30 | train loss: 0.1842 | val loss: 0.1911
 Epoch 29/30 | train loss: 0.1841 | val loss: 0.1927
 Epoch 30/30 | train loss: 0.1845 | val loss: 0.1911
 Loss curve saved to results/loss_curve_8x_ssim.png
-PS C:\Users\bhavd\Projects\lacunae> 
